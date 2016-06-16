@@ -1,17 +1,31 @@
-angular.module('routes', ['ngRoute'])
+angular.module('videoGames', ['videoGames.controllers', 'videoGames.services', 'ngRoute','firebase'])
 
-.config(function($routeProvider){
+.value('fbRef', 'https://practica-firebase-c98eb.firebaseio.com/');
+
+.config(function($routeProvider) {
+	var resolveGames = {
+		games: function (Games) {
+			return Games.fetch();
+		}
+	};
+
 	$routeProvider
 		.when('/', {
-			templateUrl: "views/home.html"
+			controller: 'GameListController as gameList',
+			templateUrl: 'views/list.html',
+			resolve: resolveGames
 		})
-		.when('/songs', {
-			templateUrl: "views/songs.html"
+		.when('/games', {
+			controller: 'EditGameController as editGame',
+			templateUrl: 'views/details.html',
+			resolve: resolveGames
 		})
-		.when('/contactus', {
-			templateUrl: "views/contactus.html"
+		.when('/details', {
+			controller: 'NewGameController as editGame',
+			templateUrl: 'views/details.html',
+			resolve: resolveGames
 		})
 		.otherwise({
-			redirectTo: '/'
+			redirecTo: '/'
 		});
 });

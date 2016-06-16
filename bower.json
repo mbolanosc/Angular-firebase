@@ -1,10 +1,10 @@
 {
-  "name": "Angular-Navigation",
-  "homepage": "https://github.com/edWAR6/Angular-Navigation",
-  "description": "Ejemplo de ngRoute",
+  "name": "Angular with firebase",
+  "homepage": "https://github.com/mbolanosc/Angular-firebase",
+  "description": "Ejemplo firebase",
   "main": "index.html",
   "authors": [
-    "Eduardo Oviedo"
+    ""
   ],
   "license": "MIT",
   "private": true,
