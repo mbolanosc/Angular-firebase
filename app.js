@@ -1,31 +1,27 @@
-angular.module('videoGames', ['videoGames.controllers', 'videoGames.services', 'ngRoute','firebase'])
-
-.value('fbRef', 'https://practica-firebase-c98eb.firebaseio.com/');
+angular.module('videoGames', ['videoGames.controllers', 'videoGames.factories', 'ngRoute','firebase'])
+	
 
 .config(function($routeProvider) {
-	var resolveGames = {
-		games: function (Games) {
-			return Games.fetch();
-		}
-	};
-
 	$routeProvider
 		.when('/', {
-			controller: 'GameListController as gameList',
-			templateUrl: 'views/list.html',
-			resolve: resolveGames
+			templateUrl: 'views/home.html',
 		})
 		.when('/games', {
-			controller: 'EditGameController as editGame',
-			templateUrl: 'views/details.html',
-			resolve: resolveGames
+			templateUrl: 'views/games.html',
+			controller: 'listController as list',
 		})
-		.when('/details', {
-			controller: 'NewGameController as editGame',
-			templateUrl: 'views/details.html',
-			resolve: resolveGames
+		.when('/game:gameId', {
+			templateUrl: 'views/game.html',	
 		})
 		.otherwise({
 			redirecTo: '/'
 		});
+
+	var config = {
+	    apiKey: "AIzaSyChqjTB8yd5Cjtmzmc4mtUObhei-EEbX2M",
+	    authDomain: "practica-firebase-c98eb.firebaseapp.com",
+	    databaseURL: "https://practica-firebase-c98eb.firebaseio.com",
+	    storageBucket: "practica-firebase-c98eb.appspot.com",
+	  };
+	  firebase.initialzeApp(config);
 });
