@@ -1,0 +1,22 @@
+{
+  "name": "Angular-Navigation",
+  "homepage": "https://github.com/edWAR6/Angular-Navigation",
+  "description": "Ejemplo de ngRoute",
+  "main": "index.html",
+  "authors": [
+    "Eduardo Oviedo"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.6",
+    "angular-route": "^1.5.6"
+  }
+}
