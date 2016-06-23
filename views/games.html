@@ -1,8 +1,8 @@
-<p>	Mi lista de juegos:</p>
+<p>Mi lista de juegos:</p>
 <ul>
-	<li ng-repeat = "game in list.games">
-		Name: {{game.name}},
-		Price: {{game.price}}
+	<li ng-repeat="game in list.games">
+		Name: {{game.name}}, Price: {{game.price}}
+		<a ng-href="#/game/{{game.$id}}">Edit</a>
 	</li>
-	
 </ul>
+

@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="videoGames">
+<html ng-app="videogames">
 <head>
-	<meta charset="UTF-8">
 	<title>NG-Route</title>
 	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-resource/angular-resource.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
 	<script src="bower_components/firebase/firebase.js"></script>
 	<script src="bower_components/angularfire/dist/angularfire.js"></script>
 	<script src="app.js"></script>
-	<script src="controller/controller1.js"></script>
-	<script src="factories/factorie1.js"></script>
+	<script src="controllers.js"></script>
+	<script src="factories.js"></script>
 </head>
 <body>
-	<h1>My Video Games</h1>
+	<h1>Hola Mundo</h1>
+	<br>
+	<br>
+	<br>
 	<div ng-view></div>
+	<br>
+	<br>
+	<br>
+	<nav>
+		<a ng-href="#/">Home</a>
+		<br>
+		<a ng-href="#/games">Games</a>
+		<br>
+		<a ng-href="#/new">New Game</a>
+	</nav>
 </body>
 </html>
