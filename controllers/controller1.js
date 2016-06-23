@@ -1,6 +1,20 @@
 angular.module(videoGames.controllers ,[])
-	.controller('listController' ,function($location){
+	.controller('listController' ,function($location,$games){
+		var list = this;
 
-		$location.path('/');
+		$games.list().then(function(games){
+			list.games = games;
+		},function(error){
+			console.log(error);
+		});
 
+		list.add = function (){
+			$games.add({}).then(function(){
+
+
+			},function(error){
+				alert('Error');
+			});
+
+		};
 	});
